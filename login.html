@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-cover bg-center">
+
+  <!-- Card -->
+  <div class="bg-white shadow-2xl rounded-xl w-full max-w-md p-8">
+    
+    <!-- Header -->
+    <div class="mb-6 text-center">
+      <h6 class="text-2xl font-bold mb-1">Login</h6>
+      <p class="text-gray-500">Sign in to your account to continue.</p>
+    </div>
+
+    <!-- Form -->
+    <form class="space-y-5">
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+        <div class="relative mt-1">
+          <input type="email" id="email" name="email" required
+                 class="w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 px-4 py-2 pr-10"/>
+          <span class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1118.879 6.196a9 9 0 01-13.758 11.608z" />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <div class="relative mt-1">
+          <input type="password" id="password" name="password" required
+                 class="w-full rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 px-4 py-2 pr-10"/>
+          <span class="absolute inset-y-0 right-3 flex items-center text-gray-400 cursor-pointer" onclick="togglePassword()">
+            <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md">
+        Sign in
+      </button>
+    </form>
+
+    <!-- Register -->
+    <div class="mt-6 text-center">
+      <small class="text-gray-600">Not registered?</small>
+      <a href="page-user-register.html" class="text-blue-600 font-semibold hover:underline">Create account</a>
+    </div>
+  </div>
+
+  <!-- Toggle password -->
+  <script>
+    function togglePassword() {
+      const pwd = document.getElementById("password");
+      const eye = document.getElementById("eye-icon");
+      if (pwd.type === "password") {
+        pwd.type = "text";
+        eye.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.959 9.959 0 012.26-3.84M9.88 9.88a3 3 0 014.24 4.24"/>`;
+      } else {
+        pwd.type = "password";
+        eye.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />`;
+      }
+    }
+  </script>
+</body>
+</html>

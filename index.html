@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Sanrio Header</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="/src/main.ts"></script>
 </head>
-<body class="bg-white">
+<body class="bg-white m-0 p-0">
 
   <!-- Top bar -->
   <div class="flex justify-between items-center bg-blue-50 px-6 py-2 text-sm">
     <div class="flex space-x-6 items-center ml-auto">
-      <a href="#" class="flex items-center space-x-1 hover:underline">
+      <a href="login.html" class="flex items-center space-x-1 hover:underline">
         <span>My Account</span>
       </a>
       <a href="#" class="flex items-center space-x-1 hover:underline">
@@ -55,5 +55,31 @@
     Hello, 4 Million Friends! Watch Hello Kitty and Friends Supercute Adventures Season 11 - Now Streaming!
   </div>
 
+  <!-- Section -->
+  <section class="relative h-screen w-full overflow-hidden bg-cover bg-center"
+           style="background-image: url('/sanrio2.gif');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0">
+      <img src="picture/sanrio2.gif" alt="overlay" class="w-full h-full object-cover">
+    </div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+      <p class="uppercase tracking-widest text-sm mb-2"></p>
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+        <!-- We’re Polo, A Creative <br> Startup Based in Melbourne -->
+      </h1>
+    </div>
+  </section>
+
+    <!-- 🔹 Feature Section -->
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center py-12 bg-white text-gray-800">
+    <div><h3 class="font-semibold">Highly Customizable</h3></div>
+    <div><h3 class="font-semibold">Clean Code</h3></div>
+    <div><h3 class="font-semibold">Heavily Awarded</h3></div>
+    <div><h3 class="font-semibold">Fast Performance</h3></div>
+  </section>
+
 </body>
 </html>
+
