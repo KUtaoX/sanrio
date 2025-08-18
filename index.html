@@ -1,13 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Sanrio Header</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+  <!-- Top bar -->
+  <div class="flex justify-between items-center bg-blue-50 px-6 py-2 text-sm">
+    <div class="flex space-x-6 items-center ml-auto">
+      <a href="#" class="flex items-center space-x-1 hover:underline">
+        <span>My Account</span>
+      </a>
+      <a href="#" class="flex items-center space-x-1 hover:underline">
+        <span>Cart</span> 
+      </a>
+    </div>
+  </div>
+
+  <!-- Main header -->
+  <div class="flex items-center justify-between px-6 py-4 border-b">
+    <!-- Menu -->
+    <nav class="flex space-x-6 font-bold text-sm">
+      <a href="#" class="hover:text-blue-600">NEW</a>
+      <a href="#" class="hover:text-blue-600">COLLABS</a>
+      <a href="#" class="flex items-center hover:text-blue-600">
+        <span></span> <span class="ml-1">CHARACTERS</span>
+      </a>
+      <a href="#" class="hover:text-blue-600">APPAREL</a>
+      <a href="#" class="hover:text-blue-600">BAGS+</a>
+      <a href="#" class="hover:text-blue-600">HOME</a>
+      <a href="#" class="hover:text-blue-600">PLUSH & TOYS</a>
+      <a href="#" class="hover:text-blue-600">STATIONERY</a>
+      <a href="#" class="hover:text-blue-600">SALE</a>
+      <a href="#" class="hover:text-blue-600">BACK TO SCHOOL</a>
+    </nav>
+
+    <!-- Logo -->
+    <div class="flex-shrink-0">
+      <!-- nothing -->
+    </div>
+
+    <!-- Search + icons -->
+    <div class="flex items-center space-x-3">
+      <input type="text" placeholder="What are you looking for?" 
+             class="border rounded-md px-3 py-1 w-60 focus:ring focus:ring-blue-200 text-sm">
+      <button class="text-gray-600"></button>
+    </div>
+  </div>
+
+  <!-- Bottom info bar -->
+  <div class="bg-blue-400 text-white text-center py-1 text-sm">
+    Hello, 4 Million Friends! Watch Hello Kitty and Friends Supercute Adventures Season 11 - Now Streaming!
+  </div>
+
+</body>
 </html>
