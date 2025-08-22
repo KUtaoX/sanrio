@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+        <!-- Shipping details -->
+        <div class="md:col-span-2 bg-white p-6 rounded-xl shadow">
+            <h3 class="text-sm text-gray-500 mb-1">Step 1 of 3</h3>
+            <h2 class="text-xl font-semibold mb-6">Shipping details</h2>
+        </div>
+        
+        <!-- Order Summary -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-lg font-semibold mb-4">Order summary</h3>
+          
+          <!-- Item -->
+          <div class="flex justify-between text-sm text-gray-600 mb-2">
+            <img src="/picture/bagKuromi.png" alt="Kuromi 2-Way Easy Tote" class="w-14 h-14 rounded mr-3">
+            <div class="flex-1">
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">Kuromi 2-Way Easy Tote</a>
+              <span class="block text-sm text-gray-600">3 x 28$</span>
+            </div>
+            <button class="text-gray-400 hover:text-red-500"></button>
+          </div>
+
+          <div class="flex justify-between text-sm text-gray-600 mb-2">
+            <img src="/picture/bagKuromi2.png" alt="My Melody & Kuromi x LeSportsac Large Emerald Tote Bag" class="w-14 h-14 rounded mr-3">
+            <div class="flex-1">
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">My Melody & Kuromi x LeSportsac Large Emerald Tote Bag</a>
+              <span class="block text-sm text-gray-600">1 x 18$</span>
+            </div>
+            <button class="text-gray-400 hover:text-red-500"></button>
+          </div>
+
+          <hr class="mb-4">
+
+          <!-- Total -->
+          <div class="flex justify-between text-sm mb-1">
+            <span>Subtotal</span>
+            <span>320$</span>
+          </div>
+          <div class="flex justify-between text-sm mb-1">
+            <span>Taxes</span>
+            <span>8%</span>
+          </div>
+          <div class="flex justify-between font-semibold text-gray-800 mb-3">
+            <span>Total</span>
+            <span>385$</span>
+          </div>
+
+          <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">
+            PLACE ORDER
+          </button>
+        </div>
+        
+        <!-- Shipping method -->
+        <div class="bg-white p-6 rounded-xl shadow">
+            <h3 class="text-sm text-gray-500 mb-1">Step 2 of 3</h3>
+            <h2 class="text-xl font-semibold mb-6">Shipping method</h2>
+
+            <div class="flex flex-col md:flex-row gap-6">
+            <label class="flex items-center space-x-2">
+                <input type="radio" name="shipping" class="text-blue-600">
+                <span class="text-sm">Free – Regular shipping<br><span class="text-gray-500">3–5 business days</span></span>
+            </label>
+            <label class="flex items-center space-x-2">
+                <input type="radio" name="shipping" class="text-blue-600">
+                <span class="text-sm">$19.99 – Express shipping<br><span class="text-gray-500">1–3 business days</span></span>
+            </label>
+            </div>
+        </div>
+        
+        <!-- Payment method -->
+        <div class="bg-white shadow rounded-lg p-6">
+            <p class="text-sm text-gray-500 mb-2">Step 3 of 3</p>
+            <h2 class="text-lg font-semibold mb-4">Payment method</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Mastercard -->
+            <button class="border rounded-lg p-4 flex flex-col items-center hover:border-blue-500 focus:ring-2 focus:ring-blue-400">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" 
+                    alt="Mastercard" class="h-8 mb-2">
+                <span class="text-sm text-gray-700">Mastercard</span>
+            </button>
+
+            <!-- PayPal -->
+            <button class="border rounded-lg p-4 flex flex-col items-center hover:border-blue-500 focus:ring-2 focus:ring-blue-400">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" 
+                    alt="PayPal" class="h-8 mb-2">
+                <span class="text-sm text-gray-700">PayPal</span>
+            </button>
+
+            <!-- Bank Transfer -->
+            <button class="border rounded-lg p-4 flex flex-col items-center hover:border-blue-500 focus:ring-2 focus:ring-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M3 10h18M4 10V8a2 2 0 012-2h12a2 2 0 012 2v2M4 10v10h16V10M10 14h4" />
+                </svg>
+                <span class="text-sm text-gray-700">Bank Transfer</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Sanrio Header</title>
   <script type="module" src="/src/main.ts"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body class="bg-white m-0 p-0">
 
@@ -13,38 +15,43 @@
       <a href="view/login.html" class="flex items-center space-x-1 hover:underline">
         <span>My Account</span>
       </a>
+      
       <!-- Button cart -->
-      <div x-data="{ open: false }" class="relative inline-block text-left group z-50">
-        
-        <button class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
-          <i class="icon-shopping-cart"></i>
+      <div x-data="{ open: false, locked: false }"
+          class="relative inline-block text-left z-50"
+          @mouseenter="open = true"
+          @mouseleave="if (!locked) open = false">
+
+        <!-- ปุ่ม Cart -->
+        <button @click="open = !open" class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+           <img src="image/market.png" alt="Cart" class="w-6 h-6">
         </button>
 
-        
-        <div class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4 hidden group-hover:block">
+        <!-- Drop Down -->
+        <div x-show="open"
+            x-transition
+            @click.outside="if (!locked) open = false"
+            class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+
           <h4 class="text-lg font-semibold mb-3">My Cart</h4>
 
-          
+          <!-- Item -->
           <div class="flex items-center mb-3">
-            <img src="images/shop/products/10.jpg" alt="Bolt Sweatshirt" class="w-14 h-14 rounded mr-3">
+            <img src="picture/bagKuromi.png" alt="Kuromi 2-Way Easy Tote" class="w-14 h-14 rounded mr-3">
             <div class="flex-1">
-              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">Bolt Sweatshirt</a>
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">Kuromi 2-Way Easy Tote</a>
               <span class="block text-sm text-gray-600">3 x 28$</span>
             </div>
-            <button class="text-gray-400 hover:text-red-500">
-              <i class="icon-x"></i>
-            </button>
+            <button class="text-gray-400 hover:text-red-500"></button>
           </div>
 
           <div class="flex items-center mb-3">
-            <img src="images/shop/products/11.jpg" alt="Yellow Sweatshirt" class="w-14 h-14 rounded mr-3">
+            <img src="picture/bagKuromi2.png" alt="My Melody & Kuromi x LeSportsac Large Emerald Tote Bag" class="w-14 h-14 rounded mr-3">
             <div class="flex-1">
-              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">Yellow Sweatshirt</a>
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">My Melody & Kuromi x LeSportsac Large Emerald Tote Bag</a>
               <span class="block text-sm text-gray-600">1 x 18$</span>
             </div>
-            <button class="text-gray-400 hover:text-red-500">
-              <i class="icon-x"></i>
-            </button>
+            <button class="text-gray-400 hover:text-red-500"></button>
           </div>
 
           <hr class="my-3 border-gray-200">
@@ -63,10 +70,10 @@
             <span>385$</span>
           </div>
 
-          <div class="text-right">
-            <button class="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
-              Checkout
-            </button>
+          <div class="flex justify-end">
+            <a href="view/Cart.html" class="flex items-center space-x-1 hover:underline text-white bg-blue-500 rounded-lg px-4 py-2">
+              <span>Checkout</span>
+            </a>
           </div>
         </div>
       </div>
@@ -117,7 +124,7 @@
   <!-- Content -->
   <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
     <p class="uppercase tracking-widest text-sm mb-2">Welcome</p>
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight animate__animated animate__slideInDown">
       Hello Kitty & Friends
     </h1>
   </div>
