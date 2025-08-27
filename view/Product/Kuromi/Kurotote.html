@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hello Kitty 7'' Plush</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-pink-50">
+    <header class="bg-white text-center py-5 shadow-md">
+    <h1 class="text-3xl font-bold text-gray-800">Sanrio Characters</h1>
+  </header>
+  
+   <nav class="bg-[#ffe6ef] py-3 text-center">
+    <a href="index.html" class="mx-3 text-lg text-black hover:text-white">Home</a>
+    <a href="/view/Charectors/kittyPage.html" class="mx-3 text-lg text-black hover:text-white">Hello Kitty</a>
+    <a href="KuroPage.html" class="mx-3 text-lg text-black hover:text-white">Bad Kuromi</a>
+    <a href="CinnamonPage.html" class="mx-3 text-lg text-black hover:text-white">Cinnamoroll</a>
+    <a href="TwinPage.html" class="mx-3 text-lg text-black hover:text-white">Twin Star</a>
+    <a href="MymePage.html" class="mx-3 text-lg text-black hover:text-white">My Melody</a>
+    <a href="PomPage.html" class="mx-3 text-lg text-black hover:text-white">Pom Pom Purin</a>
+  </nav>
+  <!-- Product Section -->
+  <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    
+    <!-- Product Image & Gallery -->
+    <div class="flex flex-col items-center">
+      <!-- รูปใหญ่ -->
+      <img id="mainImage" src="../../../picture/Kuro/Kurotote.png" 
+           alt="Kuromi Classic Quilted Mini Crossbody" 
+           class="w-80 rounded-lg shadow-md mb-6">
+
+      <!-- Thumbnail Gallery -->
+      <div class="flex space-x-4">
+        <img src="../../../picture/Kuro/Kurotote.png" alt="Thumbnail 1" 
+             class="thumbnail w-20 border-2 border-black rounded cursor-pointer">
+        <img src="../../../picture/Kuro/Kurotote1.png" alt="Thumbnail 2" 
+             class="thumbnail w-20 rounded opacity-70 hover:opacity-100 transition cursor-pointer">
+        <img src="../../../picture/Kuro/Kurotote2.png" alt="Thumbnail 3" 
+             class="thumbnail w-20 rounded opacity-70 hover:opacity-100 transition cursor-pointer">
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h1 class="text-3xl font-bold mb-2">Kuromi 2-Way Easy Tote</h1>
+      <p class="text-2xl font-bold text-black-700 mb-6">$32.00</p>
+
+      <!-- Quantity + Add to Cart -->
+      <div class="flex items-center space-x-4 mb-6">
+        <div class="flex items-center border border-gray-400 ">
+          <button class="px-3 py-1 font-bold">-</button>
+          <span class="px-4">1</span>
+          <button class="px-3 py-1 font-bold">+</button>
+        </div>
+        <button class="bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition">
+          ADD TO CART
+        </button>
+      </div>
+
+      <!-- Description -->
+      <p class="text-gray-700 mb-4">
+        This mini tote bag offers two fun ways to carry it and lets you personalize with your favorite Sanrio charms and mascots! With its simple design, it pairs easily with any outfit. 
+        Carry it your way—by hand or over your shoulder, for a playful and practical style!
+      </p>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const mainImage = document.getElementById("mainImage");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener("click", () => {
+        // เปลี่ยนรูปใหญ่
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+
+        // reset border ของ thumbnail ทั้งหมด
+        thumbnails.forEach(t => t.classList.remove("border-2", "border-black", "opacity-100"));
+        
+        // เพิ่ม border ให้รูปที่เลือก
+        thumbnail.classList.add("border-2", "border-black", "opacity-100");
+      });
+    });
+  </script>
+</body>
+</html>

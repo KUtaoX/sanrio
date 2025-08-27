@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hello Kitty 7'' Plush</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header -->
+  <header class="bg-white text-center py-5 shadow-md">
+    <h1 class="text-3xl font-bold text-gray-800">Sanrio Characters</h1>
+  </header>
+  
+  <!-- Navigation -->
+  <nav class="bg-[#ffe6ef] py-3 text-center">
+    <a href="index.html" class="mx-3 text-lg text-black hover:text-white">Home</a>
+    <a href="/view/Charectors/kittyPage.html" class="mx-3 text-lg text-black hover:text-white">Hello Kitty</a>
+    <a href="KuroPage.html" class="mx-3 text-lg text-black hover:text-white">Bad Kuromi</a>
+    <a href="CinnamonPage.html" class="mx-3 text-lg text-black hover:text-white">Cinnamoroll</a>
+    <a href="TwinPage.html" class="mx-3 text-lg text-black hover:text-white">Twin Star</a>
+    <a href="MymePage.html" class="mx-3 text-lg text-black hover:text-white">My Melody</a>
+    <a href="PomPage.html" class="mx-3 text-lg text-black hover:text-white">Pom Pom Purin</a>
+  </nav>
+
+  <!-- Product Section -->
+  <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    
+    <!-- Product Image & Gallery -->
+    <div class="flex flex-col items-center">
+      <!-- Main Image -->
+      <div class="w-80 h-80 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+        <img id="mainImage" 
+             src="../../../picture/Twin/btwin4.png" 
+             alt="LittleTwinStars Baby Bundle Bag Charm" 
+             class="w-full h-full object-cover rounded-lg">
+      </div>
+
+      <!-- Thumbnail Gallery -->
+      <div class="flex space-x-4">
+        <img src="../../../picture/Twin/btwin4.png" alt="btwin1" 
+             class="thumbnail w-20 h-20 rounded object-cover cursor-pointer opacity-70 hover:opacity-100 transition">
+        <img src="../../../picture/Twin/btwin4.1.png" alt="btwin1.1" 
+             class="thumbnail w-20 h-20 rounded object-cover cursor-pointer opacity-70 hover:opacity-100 transition">
+        
+        
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h1 class="text-3xl font-bold mb-2">LittleTwinStars 2-Way Mini Crescent Bag Charm</h1>
+      <p class="text-2xl font-bold text-gray-700 mb-6">$17.00</p>
+
+      <!-- Quantity + Add to Cart -->
+      <div class="flex items-center space-x-4 mb-6">
+        <div class="flex items-center bg-white border border-gray-400 rounded">
+          <button class="px-3 py-1 font-bold">-</button>
+          <span class="px-4">1</span>
+          <button class="px-3 py-1 font-bold">+</button>
+        </div>
+        <button class="bg-black text-white px-6 py-2 font-semibold rounded hover:bg-gray-800 transition">
+          ADD TO CART
+        </button>
+      </div>
+
+
+      <!-- Description -->
+      <p class="text-xs text-gray-700 mb-4">
+        Just go mini! Add a little flair to your bags with this baby crescent bag that can be hung two ways - via lobster clasp or the adjustable buckle, which can stash your lip gloss, loose change, or whatever you wish!
+      </p> 
+
+      
+      
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const mainImage = document.getElementById("mainImage");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener("click", () => {
+        // เปลี่ยนรูปใหญ่
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+
+        // reset border ของ thumbnail ทั้งหมด
+        thumbnails.forEach(t => t.classList.remove("border-2", "opacity-100"));
+
+        // เพิ่ม border ให้รูปที่เลือก
+        thumbnail.classList.add("border-2", "border-pink-200", "opacity-100 ");
+      });
+    });
+  </script>
+</body>
+</html>
