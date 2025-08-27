@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Sanrio Header</title>
   <script type="module" src="/src/main.ts"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body class="bg-white m-0 p-0">
 
@@ -13,10 +15,74 @@
       <a href="view/login.html" class="flex items-center space-x-1 hover:underline">
         <span>My Account</span>
       </a>
-      <a href="#" class="flex items-center space-x-1 hover:underline">
-        <span>Cart</span> 
-      </a>
+      
+      <!-- Button cart -->
+      <div x-data="{ open: false, locked: false }"
+          class="relative inline-block text-left z-50"
+          @mouseenter="open = true"
+          @mouseleave="if (!locked) open = false">
+
+        <!-- ปุ่ม Cart -->
+        <button @click="open = !open" class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+           <img src="image/market.png" alt="Cart" class="w-6 h-6">
+        </button>
+
+        <!-- Drop Down -->
+        <div x-show="open"
+            x-transition
+            @click.outside="if (!locked) open = false"
+            class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+
+          <h4 class="text-lg font-semibold mb-3">My Cart</h4>
+
+          <!-- Item -->
+          <div class="flex items-center mb-3">
+            <img src="picture/bagKuromi.png" alt="Kuromi 2-Way Easy Tote" class="w-14 h-14 rounded mr-3">
+            <div class="flex-1">
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">Kuromi 2-Way Easy Tote</a>
+              <span class="block text-sm text-gray-600">3 x 28$</span>
+            </div>
+            <button class="text-gray-400 hover:text-red-500"></button>
+          </div>
+
+          <div class="flex items-center mb-3">
+            <img src="picture/bagKuromi2.png" alt="My Melody & Kuromi x LeSportsac Large Emerald Tote Bag" class="w-14 h-14 rounded mr-3">
+            <div class="flex-1">
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">My Melody & Kuromi x LeSportsac Large Emerald Tote Bag</a>
+              <span class="block text-sm text-gray-600">1 x 18$</span>
+            </div>
+            <button class="text-gray-400 hover:text-red-500"></button>
+          </div>
+
+          <hr class="my-3 border-gray-200">
+
+          <!-- Total -->
+          <div class="flex justify-between text-sm mb-1">
+            <span>Subtotal</span>
+            <span>320$</span>
+          </div>
+          <div class="flex justify-between text-sm mb-1">
+            <span>Taxes</span>
+            <span>8%</span>
+          </div>
+          <div class="flex justify-between font-semibold text-gray-800 mb-3">
+            <span>Total</span>
+            <span>385$</span>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="view/Cart.html" class="flex items-center space-x-1 hover:underline text-white bg-blue-500 rounded-lg px-4 py-2">
+              <span>Checkout</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center">
+    <img src="picture/Sanrio_LOGO.webp" class="flex-shrink-0 w-36 h-auto mt-2">
   </div>
 
   <!-- Main header -->
@@ -25,9 +91,7 @@
     <nav class="flex space-x-6 font-bold text-sm">
       <a href="#" class="hover:text-blue-600">NEW</a>
       <a href="#" class="hover:text-blue-600">COLLABS</a>
-      <a href="#" class="flex items-center hover:text-blue-600">
-        <span></span> <span class="ml-1">CHARACTERS</span>
-      </a>
+      <a href="#" class="hover:text-blue-600">CHARACTERS</a>
       <a href="#" class="hover:text-blue-600">APPAREL</a>
       <a href="#" class="hover:text-blue-600">BAGS+</a>
       <a href="#" class="hover:text-blue-600">HOME</a>
@@ -35,12 +99,8 @@
       <a href="#" class="hover:text-blue-600">STATIONERY</a>
       <a href="#" class="hover:text-blue-600">SALE</a>
       <a href="#" class="hover:text-blue-600">BACK TO SCHOOL</a>
+      <a href="view/Charectors/kittyPage.html" class="hover:text-blue-600">Kitty</a>
     </nav>
-
-    <!-- Logo -->
-    <div class="flex-shrink-0">
-      <!-- nothing -->
-    </div>
 
     <!-- Search + icons -->
     <div class="flex items-center space-x-3">
@@ -55,22 +115,20 @@
     Hello, 4 Million Friends! Watch Hello Kitty and Friends Supercute Adventures Season 11 - Now Streaming!
   </div>
 
-  <!-- Section -->
-  <section class="relative h-screen w-full overflow-hidden bg-cover bg-center"
-           style="background-image: url('/sanrio2.gif');">
+ <section class="relative h-screen w-full overflow-hidden bg-cover bg-center"
+         style="background-image: url('picture/sanrio2.gif');">
 
-    <!-- Overlay -->
-    <div class="absolute inset-0">
-      <img src="picture/sanrio2.gif" alt="overlay" class="w-full h-full object-cover">
-    </div>
-    <!-- Content -->
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-      <p class="uppercase tracking-widest text-sm mb-2"></p>
-      <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-        <!-- We’re Polo, A Creative <br> Startup Based in Melbourne -->
-      </h1>
-    </div>
-  </section>
+  <!-- Overlay (ใส่แค่สีทับ ถ้าอยากให้มืดลง) -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+    <p class="uppercase tracking-widest text-sm mb-2">Welcome</p>
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight animate__animated animate__slideInDown">
+      Hello Kitty & Friends
+    </h1>
+  </div>
+</section>
 
     <!-- 🔹 Feature Section -->
   <section class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center py-12 bg-white text-gray-800">
@@ -82,4 +140,3 @@
 
 </body>
 </html>
-
