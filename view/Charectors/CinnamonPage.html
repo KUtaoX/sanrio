@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://unpkg.com/alpinejs" defer></script>
   <title>Cinnamoroll Section</title>
 
   <!-- Tailwind CSS -->
@@ -19,21 +20,106 @@
 </head>
 <body class="bg-blue-50">
 
-  <!-- Header -->
-  <header class="bg-white text-center py-5 shadow-md">
-    <h1 class="text-3xl font-bold text-gray-800">Sanrio Characters</h1>
-  </header>
+  <!-- Top bar -->
+  <div class="flex justify-between items-center bg-blue-50 px-6 py-2 text-sm">
+    <div class="flex space-x-6 items-center ml-auto">
+      <a href="/view/login.html" class="flex items-center space-x-1 hover:underline">
+        <span>My Account</span>
+      </a>
+      
+      <!-- Button cart -->
+      <div x-data="{ open: false, locked: false }"
+          class="relative inline-block text-left z-50"
+          @mouseenter="open = true"
+          @mouseleave="if (!locked) open = false">
 
-  <!-- Navigation -->
-  <nav class="bg-[#ffe6ef] py-3 text-center">
-    <a href="index.html" class="mx-3 text-lg text-black hover:text-white">Home</a>
-    <a href="kittyPage.html" class="mx-3 text-lg text-black hover:text-white">Hello Kitty</a>
-    <a href="KuroPage.html" class="mx-3 text-lg text-black hover:text-white">Bad Kuromi</a>
-    <a href="CinnamonPage.html" class="mx-3 text-lg text-black hover:text-white">Cinnamoroll</a>
-    <a href="TwinPage.html" class="mx-3 text-lg text-black hover:text-white">Twin Star</a>
-    <a href="MymePage.html" class="mx-3 text-lg text-black hover:text-white">My Melody</a>
-    <a href="PomPage.html" class="mx-3 text-lg text-black hover:text-white">Pom Pom Purin</a>
-  </nav>
+        <!-- ปุ่ม Cart -->
+        <button @click="open = !open" class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+           <img src="../../image/market.png" alt="Cart" class="w-6 h-6">
+        </button>
+
+        <!-- Drop Down -->
+        <div x-show="open"
+            x-transition
+            @click.outside="if (!locked) open = false"
+            class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+
+          <h4 class="text-lg font-semibold mb-3">My Cart</h4>
+
+          <!-- Item -->
+          <div class="flex items-center mb-3">
+            <img src="../../picture/bagKuromi.png" alt="Kuromi 2-Way Easy Tote" class="w-14 h-14 rounded mr-3">
+            <div class="flex-1">
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">Kuromi 2-Way Easy Tote</a>
+              <span class="block text-sm text-gray-600">3 x 28$</span>
+            </div>
+            <button class="text-gray-400 hover:text-red-500"></button>
+          </div>
+
+          <div class="flex items-center mb-3">
+            <img src="../../picture/bagKuromi2.png" alt="My Melody & Kuromi x LeSportsac Large Emerald Tote Bag" class="w-14 h-14 rounded mr-3">
+            <div class="flex-1">
+              <a href="#" class="font-medium text-gray-800 hover:text-blue-600">My Melody & Kuromi x LeSportsac Large Emerald Tote Bag</a>
+              <span class="block text-sm text-gray-600">1 x 18$</span>
+            </div>
+            <button class="text-gray-400 hover:text-red-500"></button>
+          </div>
+
+          <hr class="my-3 border-gray-200">
+
+          <!-- Total -->
+          <div class="flex justify-between text-sm mb-1">
+            <span>Subtotal</span>
+            <span>320$</span>
+          </div>
+          <div class="flex justify-between text-sm mb-1">
+            <span>Taxes</span>
+            <span>8%</span>
+          </div>
+          <div class="flex justify-between font-semibold text-gray-800 mb-3">
+            <span>Total</span>
+            <span>385$</span>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="/view/Cart.html" class="flex items-center space-x-1 hover:underline text-white bg-blue-500 rounded-lg px-4 py-2">
+              <span>Checkout</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center">
+    <img src="../../picture/Sanrio_LOGO.webp" class="flex-shrink-0 w-36 h-auto mt-2">
+  </div>
+
+  <!-- Main header -->
+  <div class="flex items-center justify-between px-6 py-4 border-b">
+    <!-- Menu -->
+    <nav class="flex space-x-6 font-bold text-sm">
+      <a href="../../index.html" class="hover:text-blue-600">HOME</a>
+      <a href="#" class="hover:text-blue-600">COLLABS</a>
+      <a href="#" class="hover:text-blue-600">CHARACTERS</a>
+      <a href="#" class="hover:text-blue-600">APPAREL</a>
+      <a href="#" class="hover:text-blue-600">BAGS+</a>
+      <a href="#" class="hover:text-blue-600">BAGS+</a>
+    </nav>
+
+    <!-- Search + icons -->
+    <div class="flex items-center space-x-3">
+      <input type="text" placeholder="What are you looking for?" 
+             class="border rounded-md px-3 py-1 w-60 focus:ring focus:ring-blue-200 text-sm">
+      <button class="text-gray-600"></button>
+    </div>
+  </div>
+
+  <!-- Bottom info bar -->
+  <div class="bg-blue-400 text-white text-center py-1 text-sm">
+    Hello, 4 Million Friends! Watch Hello Kitty and Friends Supercute Adventures Season 11 - Now Streaming!
+  </div>
 
   <!-- Cinnamoroll Section -->
   <section class="bg-[#bbd2fb] px-8 py-12 flex flex-col md:flex-row items-center justify-between text-white">
