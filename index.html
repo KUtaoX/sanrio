@@ -6,6 +6,7 @@
   <script type="module" src="/src/main.ts"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white m-0 p-0">
 
@@ -120,15 +121,48 @@
 
   <!-- Main header -->
   <div class="flex items-center justify-between px-6 py-4 border-b">
-    <!-- <img src="picture/headder1.jpg" class="w-auto h-12"> -->
-    <!-- Menu -->
-    <nav class="flex space-x-6 font-bold text-sm">
-      <a href="#" class="hover:text-pink-500">NEW</a>
-      <a href="#" class="hover:text-pink-500">COLLABS</a>
-      <a href="#" class="hover:text-pink-500">CHARACTERS</a>
-      <a href="#" class="hover:text-pink-500">APPAREL</a>
-      <a href="#" class="hover:text-pink-500">BAGS+</a>
-      <a href="#" class="hover:text-pink-500">BAGS+</a>
+    
+    <!-- NavBar -->
+    <nav class="flex space-x-6 font-nunito text-sm">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex space-x-8">
+            
+            <!-- Characters Dropdown -->
+            <div x-data="{ open: false }" class="relative">
+              <button @mouseenter="open = true" @mouseleave="open = false"
+                class="text-pink-500 font-semibold hover:text-pink-600 transition text-base">
+                CHARACTERS
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div x-show="open" x-transition
+                  @mouseenter="open = true" @mouseleave="open = false"
+                  class="absolute left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl p-4 z-50 w-52 font-normal">
+                
+                <div class="text-sm">
+                  <ul class="space-y-2">
+                    <li><a href="view/Charectors/kittyPage.html" class="hover:text-pink-500">Hello Kitty</a></li>
+                    <li><a href="view/Charectors/KuroPage.html" class="hover:text-pink-500">Kuromi</a></li>
+                    <li><a href="view/Charectors/TwinPage.html" class="hover:text-pink-500">LittleTwinStars</a></li>
+                    <li><a href="view/Charectors/MymePage.html" class="hover:text-pink-500">My Melody</a></li>
+                    <li><a href="view/Charectors/CinnamonPage.html" class="hover:text-pink-500">Cinnamoroll</a></li>
+                    <li><a href="view/Charectors/PomPage.html" class="hover:text-pink-500">Pompompurin</a></li>
+                    <li><a href="#" class="hover:text-pink-500 font-semibold">All Sanrio Characters</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Other Menus -->
+            <a href="index.html" class="hover:text-pink-500 text-base">HOME</a>
+            <a href="#" class="hover:text-pink-500 text-base">BAGS+</a>
+            <a href="#" class="hover:text-pink-500 text-base">KEY</a>
+            <a href="#" class="hover:text-pink-500 text-base">Doll</a>
+            <a href="#" class="hover:text-pink-500 text-base">STATIONERY</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Search + icons -->
@@ -143,6 +177,8 @@
   <div class="bg-pink-500 text-white text-center py-1 text-sm">
     Hello, 4 Million Friends! Watch Hello Kitty and Friends Supercute Adventures Season 11 - Now Streaming!
   </div>
+
+  <!-- End Top Bar -->
 
  <section class="relative h-screen w-full overflow-hidden bg-cover bg-center"
          style="background-image: url('picture/bg2.gif');">
@@ -243,20 +279,20 @@
     <div class="flex justify-center space-x-4">
       <button @click="open = !open"
         class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
-        <img src="image/icon/facebook.png" alt="User" class="w-6 h-6">
+        <img src="image/icon/facebook.png" alt="User" class="w-6 h-6 hover:scale-150 transition-transform duration-300">
       </button>
       <button @click="open = !open"
         class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
-        <img src="image/icon/instagram.png" alt="User" class="w-6 h-6">
+        <img src="image/icon/instagram.png" alt="User" class="w-6 h-6 hover:scale-150 transition-transform duration-300">
       </button>
       <button @click="open = !open"
         class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
-        <img src="image/icon/twitter.png" alt="User" class="w-6 h-6">
+        <img src="image/icon/twitter.png" alt="User" class="w-6 h-6 hover:scale-150 transition-transform duration-300">
       </button>
     </div>
 
   </div>
-
+  
   <div class="mt-6 text-center text-xs text-gray-400">
     &copy; 2025 Hello Kitty & Friends. All rights reserved.
   </div>

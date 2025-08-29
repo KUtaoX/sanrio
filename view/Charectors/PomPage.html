@@ -20,12 +20,42 @@
 </head>
 <body class="bg-yellow-50">
 
-    <!-- Top bar -->
-  <div class="flex justify-between items-center bg-blue-50 px-6 py-2 text-sm">
+  <!-- Top bar -->
+  <div class="flex justify-between items-center bg-pink-300 px-6 py-2 text-sm">
     <div class="flex space-x-6 items-center ml-auto">
-      <a href="/view/login.html" class="flex items-center space-x-1 hover:underline">
-        <span>My Account</span>
-      </a>
+      <!-- Button User -->
+      <div x-data="{ open: false, locked: false }"
+        class="relative inline-block text-left z-50"
+        @mouseenter="open = true"
+        @mouseleave="if (!locked) open = false">
+
+        <!-- User -->
+        <button @click="open = !open"
+            class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+            <img src="../../image/user.png" alt="User" class="w-6 h-6">
+        </button>
+
+        <!-- Dropdown -->
+        <div x-show="open"
+            x-transition
+            class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+
+            <a href="/view/login.html"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                My Account
+            </a>
+
+            <a href="/view/CreateAccount.html"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                CreateAccount
+            </a>
+
+            <a href="logout.html"
+              class="block px-4 py-2 text-sm text-red-600 hover:bg-red-100">
+                Log Out
+            </a>
+        </div>
+    </div>
       
       <!-- Button cart -->
       <div x-data="{ open: false, locked: false }"
@@ -101,14 +131,15 @@
 
   <!-- Main header -->
   <div class="flex items-center justify-between px-6 py-4 border-b">
+    <!-- <img src="picture/headder1.jpg" class="w-auto h-12"> -->
     <!-- Menu -->
     <nav class="flex space-x-6 font-bold text-sm">
-      <a href="../../index.html" class="hover:text-blue-600">HOME</a>
-      <a href="#" class="hover:text-blue-600">COLLABS</a>
-      <a href="#" class="hover:text-blue-600">CHARACTERS</a>
-      <a href="#" class="hover:text-blue-600">APPAREL</a>
-      <a href="#" class="hover:text-blue-600">BAGS+</a>
-      <a href="#" class="hover:text-blue-600">BAGS+</a>
+      <a href="#" class="hover:text-pink-500">NEW</a>
+      <a href="#" class="hover:text-pink-500">COLLABS</a>
+      <a href="#" class="hover:text-pink-500">CHARACTERS</a>
+      <a href="#" class="hover:text-pink-500">APPAREL</a>
+      <a href="#" class="hover:text-pink-500">BAGS+</a>
+      <a href="#" class="hover:text-pink-500">BAGS+</a>
     </nav>
 
     <!-- Search + icons -->
@@ -120,9 +151,10 @@
   </div>
 
   <!-- Bottom info bar -->
-  <div class="bg-blue-400 text-white text-center py-1 text-sm">
+  <div class="bg-pink-500 text-white text-center py-1 text-sm">
     Hello, 4 Million Friends! Watch Hello Kitty and Friends Supercute Adventures Season 11 - Now Streaming!
   </div>
+  <!-- End Top Bar -->
 
 
   <!-- PomPomPurin Section -->
@@ -195,10 +227,45 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#f1f1f1] py-4 text-center text-sm text-gray-600">
-    © 2025 Sanrio Fansite
-  </footer>
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-200 py-8 mt-10 relative z-10">
+  <div class="max-w-6xl mx-auto px-6 md:px-0 flex flex-col items-center space-y-4">
 
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="../../picture/Sanrio_LOGO.webp" alt="Logo" class="w-30 h-10">
+      <span class="font-bold text-lg">Hello Kitty & Friends</span>
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-center space-x-6 text-sm">
+      <a href="#" class="hover:text-pink-400 transition-colors">Home</a>
+      <a href="#" class="hover:text-pink-400 transition-colors">About</a>
+      <a href="#" class="hover:text-pink-400 transition-colors">Contact</a>
+      <a href="#" class="hover:text-pink-400 transition-colors">Privacy</a>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center space-x-4">
+      <button @click="open = !open"
+        class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+        <img src="../../image/icon/facebook.png" alt="User" class="w-6 h-6">
+      </button>
+      <button @click="open = !open"
+        class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+        <img src="../../image/icon/instagram.png" alt="User" class="w-6 h-6">
+      </button>
+      <button @click="open = !open"
+        class="p-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+        <img src="../../image/icon/twitter.png" alt="User" class="w-6 h-6">
+      </button>
+    </div>
+
+  </div>
+  
+  <div class="mt-6 text-center text-xs text-gray-400">
+    &copy; 2025 Hello Kitty & Friends. All rights reserved.
+  </div>
+</footer>
 </body>
 </html>
