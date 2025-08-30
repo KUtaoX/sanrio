@@ -128,6 +128,9 @@
         <div class="flex justify-between items-center py-4">
           <div class="flex space-x-8">
             
+            <!-- Other Menus -->
+            <a href="index.html" class="text-pink-500 hover:text-pink-500 text-base">HOME</a>
+            
             <!-- Characters Dropdown -->
             <div x-data="{ open: false }" class="relative">
               <button @mouseenter="open = true" @mouseleave="open = false"
@@ -154,12 +157,82 @@
               </div>
             </div>
 
-            <!-- Other Menus -->
-            <a href="index.html" class="hover:text-pink-500 text-base">HOME</a>
-            <a href="#" class="hover:text-pink-500 text-base">BAGS+</a>
-            <a href="#" class="hover:text-pink-500 text-base">KEY</a>
-            <a href="#" class="hover:text-pink-500 text-base">Doll</a>
-            <a href="#" class="hover:text-pink-500 text-base">STATIONERY</a>
+             <!-- Characters Dropdown -->
+            <div x-data="{ open: false }" class="relative">
+              <button @mouseenter="open = true" @mouseleave="open = false"
+                class="text-pink-500 font-semibold hover:text-pink-600 transition text-base">
+                Key Chain
+              </button>
+
+            <!-- Dropdown Menu -->
+            <div x-show="open" x-transition
+                @mouseenter="open = true" @mouseleave="open = false"
+                class="absolute left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl p-4 z-50 w-52 font-normal">
+                
+              <div class="text-sm">
+                <ul class="space-y-2">
+                  <li><a href="view/Charectors/kittyPage.html" class="hover:text-pink-500">Hello Kitty</a></li>
+                  <li><a href="view/Charectors/KuroPage.html" class="hover:text-pink-500">Kuromi</a></li>
+                  <li><a href="view/Charectors/TwinPage.html" class="hover:text-pink-500">LittleTwinStars</a></li>
+                  <li><a href="view/Charectors/MymePage.html" class="hover:text-pink-500">My Melody</a></li>
+                  <li><a href="view/Charectors/CinnamonPage.html" class="hover:text-pink-500">Cinnamoroll</a></li>
+                  <li><a href="view/Charectors/PomPage.html" class="hover:text-pink-500">Pompompurin</a></li>
+                  <li><a href="#" class="hover:text-pink-500 font-semibold">All Sanrio Characters</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+                     <!-- Characters Dropdown -->
+            <div x-data="{ open: false }" class="relative">
+              <button @mouseenter="open = true" @mouseleave="open = false"
+                class="text-pink-500 font-semibold hover:text-pink-600 transition text-base">
+                BAG
+              </button>
+
+            <!-- Dropdown Menu -->
+            <div x-show="open" x-transition
+                @mouseenter="open = true" @mouseleave="open = false"
+                class="absolute left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl p-4 z-50 w-52 font-normal">
+                
+              <div class="text-sm">
+                <ul class="space-y-2">
+                  <li><a href="view/Charectors/kittyPage.html" class="hover:text-pink-500">Hello Kitty</a></li>
+                  <li><a href="view/Charectors/KuroPage.html" class="hover:text-pink-500">Kuromi</a></li>
+                  <li><a href="view/Charectors/TwinPage.html" class="hover:text-pink-500">LittleTwinStars</a></li>
+                  <li><a href="view/Charectors/MymePage.html" class="hover:text-pink-500">My Melody</a></li>
+                  <li><a href="view/Charectors/CinnamonPage.html" class="hover:text-pink-500">Cinnamoroll</a></li>
+                  <li><a href="view/Charectors/PomPage.html" class="hover:text-pink-500">Pompompurin</a></li>
+                  <li><a href="#" class="hover:text-pink-500 font-semibold">All Sanrio Characters</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+                           <!-- Characters Dropdown -->
+          <div x-data="{ open: false }" class="relative">
+            <button @mouseenter="open = true" @mouseleave="open = false"
+              class="text-pink-500 font-semibold hover:text-pink-600 transition text-base">
+              TOY
+            </button>
+
+          <!-- Dropdown Menu -->
+          <div x-show="open" x-transition
+              @mouseenter="open = true" @mouseleave="open = false"
+              class="absolute left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl p-4 z-50 w-52 font-normal">
+                
+            <div class="text-sm">
+              <ul class="space-y-2">
+                <li><a href="view/Charectors/kittyPage.html" class="hover:text-pink-500">Hello Kitty</a></li>
+                <li><a href="view/Charectors/KuroPage.html" class="hover:text-pink-500">Kuromi</a></li>
+                <li><a href="view/Charectors/TwinPage.html" class="hover:text-pink-500">LittleTwinStars</a></li>
+                <li><a href="view/Charectors/MymePage.html" class="hover:text-pink-500">My Melody</a></li>
+                <li><a href="view/Charectors/CinnamonPage.html" class="hover:text-pink-500">Cinnamoroll</a></li>
+                <li><a href="view/Charectors/PomPage.html" class="hover:text-pink-500">Pompompurin</a></li>
+                <li><a href="#" class="hover:text-pink-500 font-semibold">All Sanrio Characters</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
           </div>
         </div>
       </div>
@@ -290,7 +363,6 @@
         <img src="image/icon/twitter.png" alt="User" class="w-6 h-6 hover:scale-150 transition-transform duration-300">
       </button>
     </div>
-
   </div>
   
   <div class="mt-6 text-center text-xs text-gray-400">
